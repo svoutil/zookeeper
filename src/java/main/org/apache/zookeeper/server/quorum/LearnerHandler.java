@@ -166,7 +166,7 @@ public class LearnerHandler extends ZooKeeperThread {
      * For testing purpose, force leader to use snapshot to sync with followers
      */
     public static final String FORCE_SNAP_SYNC = "zookeeper.forceSnapshotSync";
-    private boolean forceSnapSync = false;
+    public static boolean forceSnapSync = false;
 
     /**
      * Keep track of whether we need to queue TRUNC or DIFF into packet queue

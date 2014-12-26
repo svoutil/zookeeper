@@ -97,6 +97,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
     private Map<Long, RemotePeerBean> jmxRemotePeerBean;
     LeaderElectionBean jmxLeaderElectionBean;
     private QuorumCnxManager qcm;
+    public int syncWithLeaderType = 0;
 
     /* ZKDatabase is a top level member of quorumpeer
      * which will be used in all the zookeeperservers
@@ -116,8 +117,7 @@ public class QuorumPeer extends ZooKeeperThread implements QuorumStats.Provider 
         public long id;
         
         public LearnerType type = LearnerType.PARTICIPANT;
-        
-        
+
         public QuorumServer(long id, InetSocketAddress addr,
                 InetSocketAddress electionAddr, InetSocketAddress clientAddr) {
             this.id = id;

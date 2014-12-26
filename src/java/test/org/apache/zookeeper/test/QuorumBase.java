@@ -285,6 +285,23 @@ public class QuorumBase extends ClientBase {
         return peers;
     }
 
+    public int getClientPortByIndex(int index) {
+        switch(index) {
+            case 0:
+                return portClient1;
+            case 1:
+                return portClient2;
+            case 2:
+                return portClient3;
+            case 3:
+                return portClient4;
+            case 4:
+                return portClient5;
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
     public void setupServers() throws IOException {
         setupServer(1);
         setupServer(2);
